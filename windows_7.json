@@ -28,7 +28,7 @@
           ["set", "{{.Name}}", "--memsize", "2048"],
           ["set", "{{.Name}}", "--cpus", "4"]
       ]
-    }
+    },
     {
       "type": "vmware-iso",
       "iso_url": "{{user `iso_url`}}",
@@ -41,7 +41,6 @@
       "ssh_wait_timeout": "8h",
       "shutdown_command": "shutdown /s /t 10 /f /d p:4:1 /c \"Packer Shutdown\"",
       "guest_os_type": "windows7-64",
-      "tools_upload_flavor": "windows",
       "disk_size": 61440,
       "vnc_port_min": 5900,
       "vnc_port_max": 5980,
