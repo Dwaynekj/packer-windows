@@ -1,6 +1,35 @@
 {
   "builders": [
     {
+      "type": "parallels-iso",
+      "iso_url": "{{user `iso_url`}}",
+      "iso_checksum_type": "{{user `iso_checksum_type`}}",
+      "iso_checksum": "{{user `iso_checksum`}}",
+      "headless": true,
+      "boot_wait": "2m",
+      "ssh_username": "vagrant",
+      "ssh_password": "vagrant",
+      "ssh_wait_timeout": "8h",
+      "shutdown_command": "shutdown /s /t 10 /f /d p:4:1 /c \"Packer Shutdown\"",
+      "guest_os_type": "windows7-64", 
+      "tools_upload_flavor": "windows",
+      "disk_size": 61440,
+      "floppy_files": [
+        "{{user `autounattend`}}",
+        "./scripts/dis-updates.ps1",
+        "./scripts/microsoft-updates.bat",
+        "./scripts/win-updates.ps1",
+        "./scripts/openssh.ps1"
+      ],
+      "parallels_tools_mode": "upload",
+      "parallels_tools_flavor": "win",
+      "parallels_tools_guest_path": "prl-tools.iso",
+      "prlctl": [
+          ["set", "{{.Name}}", "--memsize", "2048"],
+          ["set", "{{.Name}}", "--cpus", "4"]
+      ]
+    }
+    {
       "type": "vmware-iso",
       "iso_url": "{{user `iso_url`}}",
       "iso_checksum_type": "{{user `iso_checksum_type`}}",
