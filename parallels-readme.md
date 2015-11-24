@@ -8,5 +8,9 @@ Use packer to build a vagrant-parallels box [Packer Vagrant Parallels](http://pa
 
 Use packer to build a parallels box [Packer Parallels](https://packer.io/docs/builders/parallels-iso.html)
 
-Reference on using packer to build windows 7[Packer Windows Reference](https://github.com/puphpet/packer-templates/blob/master/ubuntu-12.04-x86_64/template.json)
+Reference on using packer to build windows 7 [Packer Windows Reference](https://github.com/puphpet/packer-templates/blob/master/ubuntu-12.04-x86_64/template.json)
 
+Build Parallels Provider
+```
+	packer build -only=parallels-iso template.json
+```
