@@ -14,3 +14,21 @@ Build Parallels Provider
 ```
 	packer build -only=parallels-iso template.json
 ```
+
+For Vagrant RDP
+Install
+https://itunes.apple.com/en/app/microsoft-remote-desktop/id715768417?mt=12
+then
+
+```
+	vagrant up
+	vagrant provision
+	vagrant rdp
+```
+
+For Vagrant SSH
+
+```
+	vagrant up
+	vagrant ssh
+```
